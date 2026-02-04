@@ -1,0 +1,22 @@
+## IMPLEMENTATION PLAN ##
+
+conf t
+
+router isis DGN interface {{ INTERFACE }} shutdown
+multicast-routing address-family ipv4 interface {{ INTERFACE } disable
+router pim address-family ipv4 interface {{ INTERFACE } disable
+commit
+end
+
+
+## BACKOUT PLAN ##
+
+conf t
+
+no router isis DGN interface {{ INTERFACE }} shutdown
+multicast-routing address-family ipv4 interface {{ INTERFACE } enable
+router pim address-family ipv4 interface {{ INTERFACE } enable
+commit
+end
+
+
