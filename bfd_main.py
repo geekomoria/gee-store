@@ -3,7 +3,7 @@ from getpass import getpass
 import re
 from jinja2 import Environment, FileSystemLoader
 
-uname = 'valet027'
+uname = input('Enter username: ')
 pwd = getpass('Enter password: ')
 
 # Read router list from external file
